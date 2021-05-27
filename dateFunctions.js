@@ -44,11 +44,5 @@ function sendImg(){
     }
 };
 
-export default { 
-    smartMeridiems, 
-    isoddmaster, 
-    sendImg,  
-    daysString, 
-    weekNumber, 
-    hourWithMeridiems
-};
+export {smartMeridiems, isoddmaster, sendImg, hourWithMeridiems, weekNumber, daysString};
+
