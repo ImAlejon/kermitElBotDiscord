@@ -42,7 +42,7 @@ const sendCalendar = () =>{
             case 'viernes':
                 client.channels.cache.get('847243975319617537').send(oddFriday);
                 break;
-        } else{
+        }} else {
             switch(daysString){
                 case 'lunes':
                     client.channels.cache.get('847243975319617537').send(pairMonday);
@@ -70,4 +70,3 @@ client.on('ready', () => {
 });
 
 client.login(token);
-
