@@ -1,5 +1,4 @@
 import { DateTime } from "luxon";
-import { Info } from 'luxon';
 const time = DateTime.local().setZone('America/Bogota').toFormat("HHmmss");
 const timeDate = DateTime.local().setZone('America/Bogota');
 const smartMeridiems = (am, pm) =>{
@@ -18,8 +17,7 @@ const monthInt = timeDate.month;
 const daysString = timeDate.weekdayLong
 const week = DateTime.local(yearInt,monthInt,daysInt).weekNumber;
 const weekNumber = isoddmaster(week);
-console.log(hourWithMeridiems, week, weekNumber)
-
+console.log(daysString);
 function isoddmaster(param) {
     let num = parseInt(param);
 
@@ -29,20 +27,16 @@ function isoddmaster(param) {
         result = "expected an number";
     } else {
         if (Math.abs(num) % 2 === 0) {
-            result = "even";
+            result = true;
         } else {
-            result = "odd";
+            result = false;
         }
     }
 
     return result;
 };
 
-function sendImg(){
-    if (hourWithMeridiems == '120000AM'){
-        client.channels.cache.get('714677132999000375').send({files:[`${daysString}.jpg`]});
-    }
-};
 
-export {smartMeridiems, isoddmaster, sendImg, hourWithMeridiems, weekNumber, daysString};
+
+export {smartMeridiems, isoddmaster, hourWithMeridiems, weekNumber, daysString};
 

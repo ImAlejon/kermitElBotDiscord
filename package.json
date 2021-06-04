@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "curl": "^0.1.4",
     "discord.js": "^12.5.3",
     "dotenv": "^10.0.0",
     "isoddmaster": "^1.0.0",
-    "luxon": "^1.27.0"
+    "luxon": "^1.27.0",
+    "nvm": "0.0.4"
   }
 }
