@@ -17,7 +17,6 @@ const monthInt = timeDate.month;
 const daysString = timeDate.weekdayLong
 const week = DateTime.local(yearInt,monthInt,daysInt).weekNumber;
 const weekNumber = isoddmaster(week);
-console.log(daysString);
 function isoddmaster(param) {
     let num = parseInt(param);
 

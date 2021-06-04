@@ -131,7 +131,6 @@ client.on('ready', () => {
         let todayMinutes = new Date().getMinutes("en-US", {timeZone: "America/New_York"});
         let todaySeconds = new Date().getSeconds("en-US", {timeZone: "America/New_York"});
         let date = todayHours.toString() + todayMinutes.toString() + todaySeconds.toString();
-        console.log(date + smartMeridiems());
         // Needed variables end
         // Send Image According the day Start
         if (date == '000AM'){
