@@ -1,6 +1,7 @@
 //imports start
+import { DateTime } from "luxon";
 
-import {smartMeridiems, isoddmaster, daysString, hourWithMeridiems, weekNumber} 
+import {daysString, weekNumber} 
 from './dateFunctions.js';
 
 import dotenv from 'dotenv'
@@ -128,40 +129,46 @@ const token = process.env.TOKEN;
 client.on('ready', () => {
     setInterval(() => {
         // Needed variables start
-        let todayHours = new Date().getHours("en-US", {timeZone: "America/Bogota"});
-        let todayMinutes = new Date().getMinutes("en-US", {timeZone: "America/Bogota"});
-        let todaySeconds = new Date().getSeconds("en-US", {timeZone: "America/Bogota"});
-        let date = todayHours.toString() + todayMinutes.toString() + todaySeconds.toString() + smartMeridiems();
-        console.log(date)
+        const time = DateTime.local().setZone('America/Bogota').toFormat("HHmmss");
+        const smartMeridiems = (am, pm) =>{
+            if(time > 120000){
+                pm = 'PM'
+                return pm;
+            } else{
+                am = 'AM'
+                return am;
+            }};
+        const hourWithMeridiems = `${time}${smartMeridiems()}`;
+        console.log(hourWithMeridiems)
         // Needed variables end
         // Send Image According the day Start
-        if (date == '500AM'){
+        if (hourWithMeridiems == '000000AM'){
             client.channels.cache.get('714677132999000375').send({files:[`${daysString}.jpg`]});
         }
         // Send Imagee According the day End
         // Send Calendar Start
         if(weekNumber){
-            if(date == '1400PM' && daysString == 'Monday'){
+            if(hourWithMeridiems == '090000AM' && daysString == 'Monday'){
                 client.channels.cache.get('847243975319617537').send(pairWeekMonday);
-            }else if(date == '1400PM' && daysString == 'Tuesday'){
+            }else if(hourWithMeridiems == '090000AM' && daysString == 'Tuesday'){
                 client.channels.cache.get('847243975319617537').send(pairWeekTuesday);
-            }else if(date == '1400PM' && daysString == 'Wednesday'){
+            }else if(hourWithMeridiems == '090000AM' && daysString == 'Wednesday'){
                 client.channels.cache.get('847243975319617537').send(pairWeekWednesday);
-            }else if(date == '1400PM' && daysString == 'Thursday'){
+            }else if(hourWithMeridiems == '090000AM' && daysString == 'Thursday'){
                 client.channels.cache.get('847243975319617537').send(pairWeekThursday);
-            }else if(date == '1400PM' && daysString == 'Friday'){
+            }else if(hourWithMeridiems == '090000AM' && daysString == 'Friday'){
                 client.channels.cache.get('847243975319617537').send(pairWeekFriday);
             }
         } else {
-            if(date == '1400PM' && daysString == 'Monday'){
+            if(hourWithMeridiems == '1400PM' && daysString == 'Monday'){
                 client.channels.cache.get('847243975319617537').send(oddWeekMonday);
-            }else if(date == '1400PM' && daysString == 'Tuesday'){
+            }else if(hourWithMeridiems == '1400PM' && daysString == 'Tuesday'){
                 client.channels.cache.get('847243975319617537').send(oddWeekTuesday);
-            }else if(date == '1400PM' && daysString == 'Wednesday'){
+            }else if(hourWithMeridiems == '1400PM' && daysString == 'Wednesday'){
                 client.channels.cache.get('847243975319617537').send(oddWeekWednesday);
-            }else if(date == '1400PM' && daysString == 'Thursday'){
+            }else if(hourWithMeridiems == '1400PM' && daysString == 'Thursday'){
                 client.channels.cache.get('847243975319617537').send(oddWeekThursday);
-            }else if(date == '1400PM' && daysString == 'Friday'){
+            }else if(hourWithMeridiems == '1400PM' && daysString == 'Friday'){
                 client.channels.cache.get('847243975319617537').send(oddWeekFriday);
             }
           }  

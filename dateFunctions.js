@@ -1,16 +1,6 @@
 import { DateTime } from "luxon";
 const time = DateTime.local().setZone('America/Bogota').toFormat("HHmmss");
 const timeDate = DateTime.local().setZone('America/Bogota');
-const smartMeridiems = (am, pm) =>{
-    if(time > 120000){
-        pm = 'PM'
-        return pm;
-    } else{
-        am = 'AM'
-        return am;
-    }
-}
-const hourWithMeridiems = `${time}${smartMeridiems()}`;
 const daysInt = timeDate.get('day');
 const yearInt = timeDate.year;
 const monthInt = timeDate.month;
@@ -33,7 +23,5 @@ function isoddmaster(param) {
     return result;
 };
 
-console.log(smartMeridiems())
-
-export {smartMeridiems, isoddmaster, hourWithMeridiems, weekNumber, daysString};
+export {weekNumber, daysString};
 
