@@ -19,9 +19,7 @@ const week = DateTime.local(yearInt,monthInt,daysInt).weekNumber;
 const weekNumber = isoddmaster(week);
 function isoddmaster(param) {
     let num = parseInt(param);
-
     let result = "";
-
     if (isNaN(num)) {
         result = "expected an number";
     } else {
@@ -35,7 +33,7 @@ function isoddmaster(param) {
     return result;
 };
 
-
+console.log(smartMeridiems())
 
 export {smartMeridiems, isoddmaster, hourWithMeridiems, weekNumber, daysString};
 
