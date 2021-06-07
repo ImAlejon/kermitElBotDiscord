@@ -49,48 +49,59 @@ client.on('ready', () => {
         // Send Imagee According the day End
         // Send Calendar Start
         if(weekNumber){
+            console.log('Hola 1-1')
             if(hourWithMeridiems == calendarHour){
                 if(daysString == 'Monday'){
                 client.channels.cache.get(calendarChannel).send(pairWeekMonday);
+                console.log('Sended pairWeekMonday calendar');
                 };
             }else if(hourWithMeridiems == calendarHour){
                 if(daysString == 'Tuesday'){
                 client.channels.cache.get(calendarChannel).send(pairWeekTuesday);
+                console.log('Sended pairWeekTuesday calendar');
                 };
             }else if(hourWithMeridiems == calendarHour){
                 if( daysString == 'Wednesday'){
                 client.channels.cache.get(calendarChannel).send(pairWeekWednesday);
+                console.log('Sended pairWeeekWednesday calendar');
                 };
             }else if(hourWithMeridiems == calendarHour){
                 if( daysString == 'Thursday'){
                 client.channels.cache.get(calendarChannel).send(pairWeekThursday);
+                console.log('Sended pairWeekThursday calendar');
                 };
             }else if(hourWithMeridiems == calendarHour){
                 if(daysString == 'Friday'){
                 client.channels.cache.get(calendarChannel).send(pairWeekFriday);
+                console.log('Sended oddWeekFriday calendar');
                 };
             }
         }else if(!weekNumber){
             if(hourWithMeridiems == calendarHour){
                 if(daysString == 'Monday'){
                 client.channels.cache.get(calendarChannel).send(oddWeekMonday);
+                console.log('Sended oddWeekMonday calendar');
                 };
             }else if(hourWithMeridiems == calendarHour){
                 if(daysString == 'Tuesday'){
                 client.channels.cache.get(calendarChannel).send(oddWeekTuesday);
-                };
+                console.log('Sended oddWeekTuesday calendar');
+            };
             }else if(hourWithMeridiems == calendarHour){
                 if(daysString == 'Wednesday'){
                 client.channels.cache.get(calendarChannel).send(oddWeekWednesday);
-                };
+                console.log('Sended oddWeekWednesday calendar');
+            };
             }else if(hourWithMeridiems == calendarHour){
                 if(daysString == 'Thursday'){
                 client.channels.cache.get(calendarChannel).send(oddWeekThursday);
-                };
+                console.log('Sended oddWeekThursday calendar');
+            };
             }else if(hourWithMeridiems == calendarHour){
                 if(daysString == 'Friday'){
                 client.channels.cache.get(calendarChannel).send(oddWeekFriday);
-                };
+                console.log('Sended oddWeekFriday calendar');
+            };
             }
           }  
         // Send Calendar End    
