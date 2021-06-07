@@ -1,5 +1,9 @@
+//imports
 import { DateTime } from "luxon";
-const time = DateTime.local().setZone('America/Bogota').toFormat("HHmmss");
+//imports end
+
+
+//variables
 const timeDate = DateTime.local().setZone('America/Bogota');
 const daysInt = timeDate.get('day');
 const yearInt = timeDate.year;
@@ -7,6 +11,11 @@ const monthInt = timeDate.month;
 const daysString = timeDate.weekdayLong
 const week = DateTime.local(yearInt,monthInt,daysInt).weekNumber;
 const weekNumber = isoddmaster(week);
+
+//variables end
+
+//functions
+
 function isoddmaster(param) {
     let num = parseInt(param);
     let result = "";
@@ -23,5 +32,10 @@ function isoddmaster(param) {
     return result;
 };
 
+//functions end
+
+//exports
+
 export {weekNumber, daysString};
 
+//exports end

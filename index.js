@@ -4,6 +4,11 @@ import { DateTime } from "luxon";
 import {daysString, weekNumber} 
 from './dateFunctions.js';
 
+import {
+    oddWeekMonday, oddWeekTuesday, oddWeekWednesday, oddWeekThursday, oddWeekFriday,
+    pairWeekMonday, pairWeekTuesday, pairWeekWednesday, pairWeekThursday, pairWeekFriday
+} from './embeddMsgs';
+
 import dotenv from 'dotenv'
 dotenv.config()
 
@@ -11,118 +16,14 @@ import Discord from 'discord.js';
 const client = new Discord.Client();
 
 //imports end
+
 //needed variables start
-const oddWeekMonday = new Discord.MessageEmbed()
-.setColor('#FEFDF6')
-.setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2
-                 y el día es ${daysString}`)
-.addFields(
-    {name:'Investigación', value:'-'},
-    {name:'Español', value:'-'},
-    {name:'Artes', value:'-'},
-    {name:'Filosofia', value:'-'},
-);
-const oddWeekTuesday = new Discord.MessageEmbed()
-.setColor('#FEFDF6')
-.setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2
-                 y el día es ${daysString}`)
-.addFields(
-    {name:'Mecatronica', value:'-'},
-    {name:'Estadística', value:'-'},
-    {name:'Trigonometria', value:'-'},
-    {name:'Ingles', value:'-'},
-);
-const oddWeekWednesday = new Discord.MessageEmbed()
-.setColor('#FEFDF6')
-.setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2
-                 y el día es ${daysString}`)
-.addFields(
-    {name:'Investigación', value:'-'},
-    {name:'Química', value:'-'},
-    {name:'Filosofia', value:'-'},
-    {name:'Español', value:'-'},
-);
-const oddWeekThursday = new Discord.MessageEmbed()
-.setColor('#FEFDF6')
-.setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2, 
-                y el día es ${daysString}`)
-.addFields(
-    {name:'Mecatronica', value:'-'},
-    {name:'Filosofia', value:'-'},
-    {name:'Trigonometría', value:'-'},
-    {name:'Física', value:'-'},
-);
-const oddWeekFriday = new Discord.MessageEmbed()
-.setColor('#FEFDF6')
-.setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2, 
-                y el día es ${daysString}`)
-.addFields(
-    {name:'Investigación', value:'-'},
-    {name:'Qímica', value:'-'},
-    {name:'Informatica', value:'-'},
-    {name:'Artes', value:'-'},
-);
-const pairWeekMonday = new Discord.MessageEmbed()
-.setColor('#FEFDF6')
-.setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2, 
-                y el día es ${daysString}`)
-.addFields(
-    {name:'Investigación', value:'-'},
-    {name:'Español', value:'-'},
-    {name:'Artes', value:'-'},
-    {name:'Filosofia', value:'-'},
-);
-const pairWeekTuesday = new Discord.MessageEmbed()
-.setColor('#FEFDF6')
-.setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2, 
-                y el día es ${daysString}`)
-.addFields(
-    {name:'Mecatronica', value:'-'},
-    {name:'Español', value:'-'},
-    {name:'Ingles', value:'-'},
-    {name:'Educación Física', value:'-'},
-);
-const pairWeekWednesday = new Discord.MessageEmbed()
-.setColor('#FEFDF6')
-.setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2, 
-                y el día es ${daysString}`)
-.addFields(
-    {name:'Investigación', value:'-'},
-    {name:'Química', value:'-'},
-    {name:'Ingles', value:'-'},
-    {name:'Trigonometría', value:'-'},
-);
-const pairWeekThursday = new Discord.MessageEmbed()
-.setColor('#FEFDF6')
-.setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2, 
-                y el día es ${daysString}`)
-.addFields(
-    {name:'Mecatronica', value:'-'},
-    {name:'Filosofía', value:'-'},
-    {name:'Física', value:'-'},
-    {name:'Etica', value:'-'},
-);
-const pairWeekFriday = new Discord.MessageEmbed()
-.setColor('#FEFDF6')
-.setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2, 
-                y el día es ${daysString}`)
-.addFields(
-    {name:'Investigación y Mecatronica', value:'-'},
-    {name:'Química', value:'-'},
-    {name:'Trigonometría', value:'-'},
-    {name:'Física', value:'-'},
-);
+
 const token = process.env.TOKEN;
+const calendarChannel = process.env.CALENDARTOKEN;
+const imgChannel = process.env.IMGTOKEN;
+const calendarHour = '090000AM';
+const imgHour = '120000AM';
 //needed variables end
 
 //discord bot log in start
@@ -142,34 +43,54 @@ client.on('ready', () => {
         console.log(hourWithMeridiems)
         // Needed variables end
         // Send Image According the day Start
-        if (hourWithMeridiems == '000000AM'){
-            client.channels.cache.get('714677132999000375').send({files:[`${daysString}.jpg`]});
-        }
+        if (hourWithMeridiems == imgHour){
+            client.channels.cache.get(imgChannel).send({files:[`${daysString}.jpg`]});
+        };
         // Send Imagee According the day End
         // Send Calendar Start
         if(weekNumber){
-            if(hourWithMeridiems == '090000AM' && daysString == 'Monday'){
-                client.channels.cache.get('847243975319617537').send(pairWeekMonday);
-            }else if(hourWithMeridiems == '090000AM' && daysString == 'Tuesday'){
-                client.channels.cache.get('847243975319617537').send(pairWeekTuesday);
-            }else if(hourWithMeridiems == '090000AM' && daysString == 'Wednesday'){
-                client.channels.cache.get('847243975319617537').send(pairWeekWednesday);
-            }else if(hourWithMeridiems == '090000AM' && daysString == 'Thursday'){
-                client.channels.cache.get('847243975319617537').send(pairWeekThursday);
-            }else if(hourWithMeridiems == '090000AM' && daysString == 'Friday'){
-                client.channels.cache.get('847243975319617537').send(pairWeekFriday);
+            if(hourWithMeridiems == calendarHour){
+                if(daysString == 'Monday'){
+                client.channels.cache.get(calendarChannel).send(pairWeekMonday);
+                };
+            }else if(hourWithMeridiems == calendarHour){
+                if(daysString == 'Tuesday'){
+                client.channels.cache.get(calendarChannel).send(pairWeekTuesday);
+                };
+            }else if(hourWithMeridiems == calendarHour){
+                if( daysString == 'Wednesday'){
+                client.channels.cache.get(calendarChannel).send(pairWeekWednesday);
+                };
+            }else if(hourWithMeridiems == calendarHour){
+                if( daysString == 'Thursday'){
+                client.channels.cache.get(calendarChannel).send(pairWeekThursday);
+                };
+            }else if(hourWithMeridiems == calendarHour){
+                if(daysString == 'Friday'){
+                client.channels.cache.get(calendarChannel).send(pairWeekFriday);
+                };
             }
-        } else {
-            if(hourWithMeridiems == '1400PM' && daysString == 'Monday'){
-                client.channels.cache.get('847243975319617537').send(oddWeekMonday);
-            }else if(hourWithMeridiems == '1400PM' && daysString == 'Tuesday'){
-                client.channels.cache.get('847243975319617537').send(oddWeekTuesday);
-            }else if(hourWithMeridiems == '1400PM' && daysString == 'Wednesday'){
-                client.channels.cache.get('847243975319617537').send(oddWeekWednesday);
-            }else if(hourWithMeridiems == '1400PM' && daysString == 'Thursday'){
-                client.channels.cache.get('847243975319617537').send(oddWeekThursday);
-            }else if(hourWithMeridiems == '1400PM' && daysString == 'Friday'){
-                client.channels.cache.get('847243975319617537').send(oddWeekFriday);
+        }else if(!weekNumber){
+            if(hourWithMeridiems == calendarHour){
+                if(daysString == 'Monday'){
+                client.channels.cache.get(calendarChannel).send(oddWeekMonday);
+                };
+            }else if(hourWithMeridiems == calendarHour){
+                if(daysString == 'Tuesday'){
+                client.channels.cache.get(calendarChannel).send(oddWeekTuesday);
+                };
+            }else if(hourWithMeridiems == calendarHour){
+                if(daysString == 'Wednesday'){
+                client.channels.cache.get(calendarChannel).send(oddWeekWednesday);
+                };
+            }else if(hourWithMeridiems == calendarHour){
+                if(daysString == 'Thursday'){
+                client.channels.cache.get(calendarChannel).send(oddWeekThursday);
+                };
+            }else if(hourWithMeridiems == calendarHour){
+                if(daysString == 'Friday'){
+                client.channels.cache.get(calendarChannel).send(oddWeekFriday);
+                };
             }
           }  
         // Send Calendar End    
