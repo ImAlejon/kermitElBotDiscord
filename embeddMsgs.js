@@ -1,3 +1,9 @@
+//imports
+
+import Discord from 'discord.js';
+import { daysString } from './dateFunctions.js';
+//imports end
+
 //embededd messages
 
 const oddWeekMonday = new Discord.MessageEmbed()

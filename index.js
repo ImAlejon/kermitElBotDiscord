@@ -7,7 +7,7 @@ from './dateFunctions.js';
 import {
     oddWeekMonday, oddWeekTuesday, oddWeekWednesday, oddWeekThursday, oddWeekFriday,
     pairWeekMonday, pairWeekTuesday, pairWeekWednesday, pairWeekThursday, pairWeekFriday
-} from './embeddMsgs';
+} from './embeddMsgs.js';
 
 import dotenv from 'dotenv'
 dotenv.config()
