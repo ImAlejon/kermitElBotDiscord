@@ -11,7 +11,6 @@ const monthInt = timeDate.month;
 const daysString = timeDate.weekdayLong
 const week = DateTime.local(yearInt,monthInt,daysInt).weekNumber;
 const weekNumber = isoddmaster(week);
-
 //variables end
 
 //functions
@@ -31,11 +30,26 @@ function isoddmaster(param) {
 
     return result;
 };
-
+function daysInEsp(){
+  if(daysString == 'Monday'){
+    return 'Lunes';
+  }else if(daysString == 'Tuesday'){
+    return 'Martes';
+  }else if(daysString == 'Wednesday'){
+    return 'Miércoles';
+  }else if(daysString == 'Thursday'){
+    return 'Jueves';
+  }else if(daysString == 'Friday'){
+    return 'Viernes'
+  }else{
+    return console.error('Cant recognize the day');
+  }
+};
 //functions end
+const dias = daysInEsp();
 
 //exports
 
-export {weekNumber, daysString};
+export {weekNumber, daysString, dias};
 
 //exports end

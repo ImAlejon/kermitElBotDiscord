@@ -1,7 +1,7 @@
 //imports
 
 import Discord from 'discord.js';
-import { daysString } from './dateFunctions.js';
+import { dias } from './dateFunctions.js';
 //imports end
 
 //embededd messages
@@ -9,8 +9,7 @@ import { daysString } from './dateFunctions.js';
 const oddWeekMonday = new Discord.MessageEmbed()
 .setColor('#FEFDF6')
 .setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2
-                 y el día es ${daysString}`)
+.setDescription(`el día es ${dias}`)
 .addFields(
     {name:'Investigación', value:'-'},
     {name:'Español', value:'-'},
@@ -20,8 +19,7 @@ const oddWeekMonday = new Discord.MessageEmbed()
 const oddWeekTuesday = new Discord.MessageEmbed()
 .setColor('#FEFDF6')
 .setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2
-                 y el día es ${daysString}`)
+.setDescription(`el día es ${dias}`)
 .addFields(
     {name:'Mecatronica', value:'-'},
     {name:'Estadística', value:'-'},
@@ -31,8 +29,7 @@ const oddWeekTuesday = new Discord.MessageEmbed()
 const oddWeekWednesday = new Discord.MessageEmbed()
 .setColor('#FEFDF6')
 .setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2
-                 y el día es ${daysString}`)
+.setDescription(`el día es ${dias}`)
 .addFields(
     {name:'Investigación', value:'-'},
     {name:'Química', value:'-'},
@@ -42,8 +39,7 @@ const oddWeekWednesday = new Discord.MessageEmbed()
 const oddWeekThursday = new Discord.MessageEmbed()
 .setColor('#FEFDF6')
 .setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2, 
-                y el día es ${daysString}`)
+.setDescription(`el  día es ${dias}`)
 .addFields(
     {name:'Mecatronica', value:'-'},
     {name:'Filosofia', value:'-'},
@@ -53,8 +49,7 @@ const oddWeekThursday = new Discord.MessageEmbed()
 const oddWeekFriday = new Discord.MessageEmbed()
 .setColor('#FEFDF6')
 .setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2, 
-                y el día es ${daysString}`)
+.setDescription(`el día es ${dias}`)
 .addFields(
     {name:'Investigación', value:'-'},
     {name:'Qímica', value:'-'},
@@ -64,8 +59,7 @@ const oddWeekFriday = new Discord.MessageEmbed()
 const pairWeekMonday = new Discord.MessageEmbed()
 .setColor('#FEFDF6')
 .setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2, 
-                y el día es ${daysString}`)
+.setDescription(`el día es ${dias}`)
 .addFields(
     {name:'Investigación', value:'-'},
     {name:'Español', value:'-'},
@@ -75,8 +69,7 @@ const pairWeekMonday = new Discord.MessageEmbed()
 const pairWeekTuesday = new Discord.MessageEmbed()
 .setColor('#FEFDF6')
 .setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2, 
-                y el día es ${daysString}`)
+.setDescription(`el día es ${dias}`)
 .addFields(
     {name:'Mecatronica', value:'-'},
     {name:'Español', value:'-'},
@@ -86,8 +79,7 @@ const pairWeekTuesday = new Discord.MessageEmbed()
 const pairWeekWednesday = new Discord.MessageEmbed()
 .setColor('#FEFDF6')
 .setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2, 
-                y el día es ${daysString}`)
+.setDescription(`el día es ${dias}`)
 .addFields(
     {name:'Investigación', value:'-'},
     {name:'Química', value:'-'},
@@ -97,8 +89,7 @@ const pairWeekWednesday = new Discord.MessageEmbed()
 const pairWeekThursday = new Discord.MessageEmbed()
 .setColor('#FEFDF6')
 .setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2, 
-                y el día es ${daysString}`)
+.setDescription(`el día es ${dias}`)
 .addFields(
     {name:'Mecatronica', value:'-'},
     {name:'Filosofía', value:'-'},
@@ -108,8 +99,7 @@ const pairWeekThursday = new Discord.MessageEmbed()
 const pairWeekFriday = new Discord.MessageEmbed()
 .setColor('#FEFDF6')
 .setTitle('Estamos en la semana 2')
-.setDescription(`Esta es la semana 2, 
-                y el día es ${daysString}`)
+.setDescription(`el día es ${dias}`)
 .addFields(
     {name:'Investigación y Mecatronica', value:'-'},
     {name:'Química', value:'-'},
