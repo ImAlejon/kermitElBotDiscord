@@ -22,7 +22,7 @@ const oddWeekTuesday = new Discord.MessageEmbed()
 .setDescription(`el día es ${dias}`)
 .addFields(
     {name:'Mecatronica', value:'-'},
-    {name:'Estadística', value:'-'},
+    {name:'Estadística', value:'-'}, 
     {name:'Trigonometria', value:'-'},
     {name:'Ingles', value:'-'},
 );
@@ -58,7 +58,7 @@ const oddWeekFriday = new Discord.MessageEmbed()
 );
 const pairWeekMonday = new Discord.MessageEmbed()
 .setColor('#FEFDF6')
-.setTitle('Estamos en la semana 2')
+.setTitle('Estamos en la semana 1')
 .setDescription(`el día es ${dias}`)
 .addFields(
     {name:'Investigación', value:'-'},
@@ -68,7 +68,7 @@ const pairWeekMonday = new Discord.MessageEmbed()
 );
 const pairWeekTuesday = new Discord.MessageEmbed()
 .setColor('#FEFDF6')
-.setTitle('Estamos en la semana 2')
+.setTitle('Estamos en la semana 1')
 .setDescription(`el día es ${dias}`)
 .addFields(
     {name:'Mecatronica', value:'-'},
@@ -78,7 +78,7 @@ const pairWeekTuesday = new Discord.MessageEmbed()
 );
 const pairWeekWednesday = new Discord.MessageEmbed()
 .setColor('#FEFDF6')
-.setTitle('Estamos en la semana 2')
+.setTitle('Estamos en la semana 1')
 .setDescription(`el día es ${dias}`)
 .addFields(
     {name:'Investigación', value:'-'},
@@ -88,7 +88,7 @@ const pairWeekWednesday = new Discord.MessageEmbed()
 );
 const pairWeekThursday = new Discord.MessageEmbed()
 .setColor('#FEFDF6')
-.setTitle('Estamos en la semana 2')
+.setTitle('Estamos en la semana 1')
 .setDescription(`el día es ${dias}`)
 .addFields(
     {name:'Mecatronica', value:'-'},
@@ -98,7 +98,7 @@ const pairWeekThursday = new Discord.MessageEmbed()
 );
 const pairWeekFriday = new Discord.MessageEmbed()
 .setColor('#FEFDF6')
-.setTitle('Estamos en la semana 2')
+.setTitle('Estamos en la semana 1')
 .setDescription(`el día es ${dias}`)
 .addFields(
     {name:'Investigación y Mecatronica', value:'-'},

@@ -30,11 +30,9 @@ const token = process.env.BOTTOKEN;
 //discord bot log in start
 client.on('ready', () => {
   setInterval(()=>{
-            const time = DateTime.local().setZone('America/Bogota').toFormat("HHmmss");
+        const time = DateTime.local().setZone('America/Bogota').toFormat("HHmmss");
         const timeDate = DateTime.local().setZone('America/Bogota');
-
-          const daysString = timeDate.weekdayLong
-
+        const daysString = timeDate.weekdayLong
         const smartMeridiems = (am, pm) =>{
             if(time > 120000){
                 pm = 'PM'
